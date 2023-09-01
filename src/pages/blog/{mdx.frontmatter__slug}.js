@@ -3,6 +3,8 @@ import Layout from '../../components/layout'
 import { graphql } from 'gatsby'
 import Seo from '../../components/seo'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
+import { Helmet } from "react-helmet";
+
 
 //import { v4 as uuidv4 } from 'uuid';
 
@@ -24,14 +26,18 @@ const BlogPost = ({data, children}) => {
         </a>
       </p>
       {children}
-      <form action="https://api.staticman.net/v2/entry/Marko-91/marko-s-blog-gatsby/master/comments" method="POST">
-        <input type="text" name="fields.name" placeholder="Name" required />
-        <input type="email" name="fields.email" placeholder="Email" required />
-        <input type="text" name="fields.website" placeholder="Website" />
-        <textarea name="fields.comment" placeholder="Your comment" required></textarea>
-        <button type="submit">Submit</button>
-     </form>
-
+      <div>
+        <Helmet>
+          <script
+            src="https://utteranc.es/client.js"
+            repo="Marko-91/marko-s-blog-gatsby"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async
+          />
+        </Helmet>
+      </div>
   </Layout>
   )
 }
