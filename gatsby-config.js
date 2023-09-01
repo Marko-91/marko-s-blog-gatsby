@@ -18,5 +18,11 @@ module.exports = {
   },
   "gatsby-plugin-mdx",
   "gatsby-transformer-sharp",
+  {
+    resolve: `gatsby-plugin-disqus`,
+    options: {
+      shortname: `your-disqus-shortname`
+    }
+  },
 ],
 }

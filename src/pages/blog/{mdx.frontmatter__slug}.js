@@ -4,12 +4,14 @@ import { graphql } from 'gatsby'
 import Seo from '../../components/seo'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 
+//import { v4 as uuidv4 } from 'uuid';
 
 const BlogPost = ({data, children}) => {
   const image = getImage(data.mdx.frontmatter.hero_image)
+  const post_title = data.mdx.frontmatter.title;
 
   return (
-    <Layout pageTitle={data.mdx.frontmatter.title}>
+    <Layout pageTitle={post_title}>
       <p>{data.mdx.frontmatter.date}</p>
       <GatsbyImage
         image={image}
@@ -35,6 +37,7 @@ query($id: String) {
       hero_image_alt
       hero_image_credit_link
       hero_image_credit_text
+      slug
       hero_image {
         childImageSharp {
           gatsbyImageData
