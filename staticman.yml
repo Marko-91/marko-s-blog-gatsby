@@ -1,0 +1,15 @@
+comments:
+  allowedFields:
+    - name
+    - email
+    - website
+    - comment
+  branch: master
+  commitMessage: Comment from {fields.name}
+  filename: "{fields.slug}"
+  format: "yaml"
+  moderation: true
+  requiredFields:
+    - name
+    - email
+    - comment

@@ -24,6 +24,14 @@ const BlogPost = ({data, children}) => {
         </a>
       </p>
       {children}
+      <form action="https://api.staticman.net/v2/entry/Marko-91/marko-s-blog-gatsby/master/comments" method="POST">
+        <input type="text" name="fields.name" placeholder="Name" required />
+        <input type="email" name="fields.email" placeholder="Email" required />
+        <input type="text" name="fields.website" placeholder="Website" />
+        <textarea name="fields.comment" placeholder="Your comment" required></textarea>
+        <button type="submit">Submit</button>
+     </form>
+
   </Layout>
   )
 }
